@@ -12,12 +12,13 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
+  # config.vm.box = "base"
   config.vm.box = "hashicorp/precise64"
-  config.vm.box_version = "1.0.0"
+
+  config.vm.provider "virtualbox"
 
   config.vm.provision :shell, path: "step_pre.sh"
-  config.vm.provision :shell, path: "apache.sh"
-  #config.vm.provision :shell, path: "mysql.sh"
+  # config.vm.provision :shell, path: "docker_install.sh"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
